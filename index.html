@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yielziey | Official Artist Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            @apply bg-gray-100 text-gray-800 transition-colors duration-300;
+        }
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(243, 244, 246, 1)), url('album-art/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .music-plaque {
+            @apply bg-white/70 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        #gallery-modal {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm transition-colors duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-gray-800">Yielziey</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="hover:text-purple-600 transition-colors">About</a>
+                <a href="#news" class="hover:text-purple-600 transition-colors">News</a>
+                <a href="#music" class="hover:text-purple-600 transition-colors">Music</a>
+                <a href="#gallery" class="hover:text-purple-600 transition-colors">Gallery</a>
+                <a href="#contact" class="hover:text-purple-600 transition-colors">Contact</a>
+                <a href="#follow" class="bg-purple-600 text-white px-5 py-2 rounded-full hover:bg-purple-700 transition-colors font-semibold">Follow</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-gray-200">
+            <a href="#about" class="block py-2 hover:text-purple-600">About</a>
+            <a href="#news" class="block py-2 hover:text-purple-600">News</a>
+            <a href="#music" class="block py-2 hover:text-purple-600">Music</a>
+            <a href="#gallery" class="block py-2 hover:text-purple-600">Gallery</a>
+            <a href="#contact" class="block py-2 hover:text-purple-600">Contact</a>
+            <a href="#follow" class="block mt-2 bg-purple-600 text-white text-center px-4 py-2 rounded-full hover:bg-purple-700">Follow</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg h-screen flex items-center justify-center text-center -mt-20">
+            <div>
+                <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight text-gray-900">YIELZIEY</h1>
+                <p class="text-xl md:text-2xl mt-4 text-gray-700">Singer-Songwriter from the Philippines</p>
+                <a href="#music" class="mt-8 inline-block bg-purple-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-purple-700 transition-transform hover:scale-105">Listen Now</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-white">
+             <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3">
+                        <img src="album-art/artist-photo.jpg" alt="Yielziey" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="md:w-2/3">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-6">About the Artist</h2>
+                        <p class="text-lg mb-4 text-gray-700">
+                            Chandria Mariel Ollage, professionally known as Yielziey, is a rising Filipino singer, songwriter, gamer, and programmer. Hailing from Caloocan City, she is known for her heartfelt lyrics and soulful melodies that blend emotional storytelling with modern pop sounds.
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            Her music, available on all major streaming platforms, explores themes of love, hope, and self-discovery, resonating deeply with her listeners.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- News Section -->
+        <section id="news" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">News & Updates</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- News Item 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/CDB4DB/333333?text=Live+Performance" alt="News Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">September 22, 2025</p>
+                            <h3 class="text-xl font-bold mb-3">Upcoming Live Acoustic Set</h3>
+                            <p class="text-gray-700 mb-4">Join Yielziey for a special live acoustic performance online next month. More details to be announced soon!</p>
+                            <a href="#" class="font-semibold text-purple-600 hover:underline">Read More</a>
+                        </div>
+                    </div>
+                    <!-- News Item 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/FFC8DD/333333?text=New+Single" alt="News Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">September 15, 2025</p>
+                            <h3 class="text-xl font-bold mb-3">"Almost Real" is Out Now!</h3>
+                            <p class="text-gray-700 mb-4">The new single "Almost Real" is now available on all major streaming platforms. Listen today!</p>
+                            <a href="#music" class="font-semibold text-purple-600 hover:underline">Listen Here</a>
+                        </div>
+                    </div>
+                    <!-- News Item 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/BDE0FE/333333?text=In+The+Studio" alt="News Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">September 5, 2025</p>
+                            <h3 class="text-xl font-bold mb-3">Back in the Studio</h3>
+                            <p class="text-gray-700 mb-4">Yielziey is back in the studio working on new music. Expect more soulful melodies and stories soon.</p>
+                            <a href="#" class="font-semibold text-purple-600 hover:underline">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Discography</h2>
+                <h3 class="text-3xl font-semibold text-gray-800 mb-8 text-center">EP: Unwritten Scars</h3>
+                <div class="bg-white rounded-lg shadow-lg flex flex-col sm:flex-row items-center p-6 max-w-3xl mx-auto mb-16">
+                    <img src="album-art/unwritten-scars.jpg" alt="Unwritten Scars EP" class="w-48 h-48 rounded-md shadow-md mb-4 sm:mb-0 sm:mr-8 flex-shrink-0">
+                    <div class="flex-grow text-center sm:text-left">
+                        <ol class="list-none text-lg space-y-2 text-gray-800">
+                            <li><span class="font-bold text-purple-600 mr-2">1.</span> One Way Road</li>
+                            <li><span class="font-bold text-purple-600 mr-2">2.</span> Scripted</li>
+                            <li><span class="font-bold text-purple-600 mr-2">3.</span> Fools Horizon</li>
+                            <li><span class="font-bold text-purple-600 mr-2">4.</span> No More Games</li>
+                            <li><span class="font-bold text-purple-600 mr-2">5.</span> Deserve ko ba</li>
+                        </ol>
+                        <div class="mt-6 flex justify-center sm:justify-start gap-4">
+                            <a href="https://open.spotify.com/album/0lxE2HQxYadvbpbS2wkqan?si=Zdc3RRA7R664lH_14dNc-Q" class="font-semibold text-purple-600 hover:text-purple-800">Listen on Spotify</a>
+                            <a href="https://music.apple.com/ph/album/unwritten-scars-ep/1814032803" class="font-semibold text-purple-600 hover:text-purple-800">Listen on Apple Music</a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-semibold text-gray-800 mb-8 text-center">Singles</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="music-plaque"><img src="album-art/almost-real.jpg" alt="Almost Real" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">Almost Real</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/1WvIqua8Efo6sRvk18goNA?si=59d550c8386e44d5" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a><a href="https://music.youtube.com/watch?v=68g1nnYUAyM&si=3bWju3mAlF7_1zBg" class="text-sm font-semibold text-purple-600 hover:underline">YouTube</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/just-there.jpg" alt="Just There" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">Just There</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/3PWl06ytcs2c9WX8BkQc9X?si=500e0607fc6942c8" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/gunita.jpg" alt="Gunita" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">Gunita</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/0uxG14ZxfRyGezxHcRKxwz?si=92d80e81d95a47d6" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/endless-promise.jpg" alt="Endless Promise" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">Endless Promise</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/251wVZjVPyrYP49Z8COhOn?si=640fd1599c934246" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/paglaum-sa-pag-ibig.jpg" alt="Paglaum sa Pag-ibig" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">Paglaum sa Pag-ibig</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/4vQ6trFITD1noXCt1T1k4z?si=818d32f002c34770" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/paano-pano.jpg" alt="Paano Pano?" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">Paano Pano?</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/6bX9aD4hwtJdQr68lgp7jl?si=b6f0959527cc459a" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/palayain.jpg" alt="Palayain" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">Palayain</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/2m6KNqFuSZk3JozcVLVbcg?si=c940ce2c464045bf" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/you-and-i.jpg" alt="You and I (adi)" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">You and I (adi)</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/7w33MzRPQOV53zjHb58sWP?si=b0226cff52cd4a79" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/hanapin.jpg" alt="Hanapin" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">Hanapin</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/17xL6BX2WJNpl9XBwsyD0k?si=f3484e7d00984b2e" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/crazy.jpg" alt="Crazy" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-gray-900">Crazy</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/3a4Cp3ax0mReEODbZF2zc5?si=dc4dad2379d14d5e" class="text-sm font-semibold text-purple-600 hover:underline">Spotify</a></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section id="gallery" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Photo Gallery</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="gallery-item"><img src="album-art/gallery-1.jpg" alt="Gallery Image 1" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/gallery-2.jpg" alt="Gallery Image 2" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/gallery-4.jpg" alt="Gallery Image 3" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/gallery-3.jpg" alt="Gallery Image 4" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-8">Get in Touch</h2>
+                <p class="text-lg max-w-2xl mx-auto mb-10 text-gray-700">
+                    For inquiries, collaborations, or booking, please feel free to reach out. I'm always excited to work on new projects and connect with fellow artists and creators.
+                </p>
+                <a href="mailto:yielzieymusic@gmail.com" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-purple-700 transition-transform hover:scale-105">
+                    Email for Inquiry
+                </a>
+            </div>
+        </section>
+
+        <!-- Follow Section -->
+        <section id="follow" class="py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-8">Follow Yielziey</h2>
+                <p class="text-lg max-w-2xl mx-auto mb-10 text-gray-700">
+                    Stay updated with the latest releases, behind-the-scenes content, and live streams.
+                </p>
+                <div class="flex justify-center flex-wrap gap-6">
+                    <a href="https://open.spotify.com/artist/6rhenHsRHjPnQIcawW67VQ" target="_blank" class="social-icon transition-transform duration-300" title="Spotify"><svg class="w-12 h-12 text-gray-500 hover:text-green-500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Spotify</title><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.78 17.602c-.22.36-.63.48-1 .26-2.92-1.78-6.55-2.18-10.83-.87-.44.09-.78-.23-.87-.67-.09-.44.23-.78.67-.87 4.67-1.4 8.7-1 11.95.95.4.24.53.7.28.98zm1.18-2.65c-.28.45-.82.6-1.27.33-3.24-2-7.25-2.58-11.9-.95-.53.11-.98-.28-1.09-.8-.11-.53.28-.98.8-1.09 5.13-1.78 9.6-1.1 13.23 1.1.45.28.6.82.33 1.27zm.1-3.02C12.44 6.27 7.02 6.09 4.14 7.03c-.6.2-1.15-.22-1.35-.82-.2-.6.22-1.15.82-1.35C7.22 3.78 13.26 4 19.4 6.81c.58.26.83.9.57 1.48-.26.58-.9.83-1.48.57z"/></svg></a>
+                    <a href="https://music.apple.com/ph/artist/yielziey/1721563975" target="_blank" class="social-icon transition-transform duration-300" title="Apple Music"><svg class="w-12 h-12 text-gray-500 hover:text-pink-500" role="img" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Apple Music</title><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 21.6c-5.302 0-9.6-4.298-9.6-9.6S6.698 2.4 12 2.4s9.6 4.298 9.6 9.6-4.298 9.6-9.6 9.6zm-1.201-13.637c.384-.001.761.123 1.062.364.305.243.52.57.615.936h.017c.095-.366.31-.693.615-.936.301-.241.678-.365 1.062-.364.532 0 1.033.178 1.442.512.408.333.685.79.771 1.296h.017c.038-.203.084-.398.14-.582.35-.119.704-.178 1.054-.178.148 0 .296.009.442.025v1.65a5.54 5.54 0 0 0-.58-.042c-.443 0-.859.13-1.218.388-.359.258-.62.604-.75 1.001-.132.397-.197.828-.197 1.27v4.458h-1.65v-4.458c0-.442-.065-.873-.197-1.27-.13-.397-.391-.743-.75-1.001-.359-.258-.775-.388-1.218-.388a5.54 5.54 0 0 0-.58.042v-1.65c.146-.016.294-.025.442-.025.35 0 .704.059 1.054.178.056.184.102.379.14.582h.017c.086-.506.363-.963.771-1.296.409-.334.91-.512 1.442-.512zm-1.38 5.688c.184.265.433.456.721.55.288.094.598.14.913.14s.625-.046.913-.14c.288-.094.537-.285.721-.55v4.3h1.65v-4.3c-.184-.265-.433-.456-.721-.55-.288-.094-.598-.14-.913-.14s-.625.046-.913.14c-.288.094-.537.285-.721.55v4.3h1.65v-4.3z"/></svg></a>
+                    <a href="https://www.youtube.com/@yielziey" target="_blank" class="social-icon transition-transform duration-300" title="YouTube"><svg class="w-12 h-12 text-gray-500 hover:text-red-600" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://soundcloud.com/yielziey" target="_blank" class="social-icon transition-transform duration-300" title="SoundCloud"><svg class="w-12 h-12 text-gray-500 hover:text-orange-500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>SoundCloud</title><path d="M7.422 18.225H5.79V9.954H7.42v8.27zM10.16 18.225H8.526V6.01h1.632v12.214zM12.9 18.225h-1.633V9.33h1.634v8.894zm2.738 0h-1.632V9.954h1.632v8.27zm2.74 0h-1.634V12.69h1.633v5.534zM0 12.33c0 4.673 3.42 5.37 7.765 5.37H24V6.01H7.765C3.42 6.01 0 6.708 0 11.38v.95z"/></svg></a>
+                    <a href="https://www.twitch.tv/yielziey" target="_blank" class="social-icon transition-transform duration-300" title="Twitch"><svg class="w-12 h-12 text-gray-500 hover:text-purple-500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitch</title><path d="M11.571 4.714h1.715v5.143H11.57zm4.714 0h1.715v5.143h-1.715zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714v9.429z"/></svg></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 border-t border-gray-300 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <p>&copy; 2025 Yielziey. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <img id="modal-img" src="" alt="Full-size gallery image" class="max-w-full max-h-full rounded-lg">
+        <button id="modal-close" class="absolute top-4 right-6 text-white text-5xl font-bold">&times;</button>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Gallery Modal Script
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('gallery-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalClose = document.getElementById('modal-close');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                modalImg.src = imgSrc;
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        };
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
