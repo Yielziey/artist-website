@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- This viewport tag is crucial for responsive design. It tells the browser how to control the page's dimensions and scaling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yielziey | Official Artist Website</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="album-art/yz-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            @apply bg-slate-100 text-slate-800 transition-colors duration-300;
+        }
+        .hero-bg {
+            /* Using your uploaded banner from album-art folder */
+            background-image: url('album-art/Yielziey.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .music-plaque, .merch-item {
+            @apply bg-white/70 backdrop-blur-sm border border-slate-200 rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        #gallery-modal {
+            transition: opacity 0.3s ease;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 0.5rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm transition-colors duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Responsive text size: smaller on mobile (text-2xl), larger on small screens and up (sm:text-3xl) -->
+            <a href="#" class="text-2xl sm:text-3xl font-bold text-slate-800">Yielziey</a>
+            <!-- The 'hidden md:flex' classes hide the navigation links on mobile and show them as a flex container on medium screens and up. -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="hover:text-sky-500 transition-colors">About</a>
+                <a href="#news" class="hover:text-sky-500 transition-colors">News</a>
+                <a href="#events" class="hover:text-sky-500 transition-colors">Events</a>
+                <a href="#music" class="hover:text-sky-500 transition-colors">Music</a>
+                <a href="#videos" class="hover:text-sky-500 transition-colors">Videos</a>
+                <a href="#gallery" class="hover:text-sky-500 transition-colors">Gallery</a>
+                <a href="#contact" class="hover:text-sky-500 transition-colors">Contact</a>
+                <a href="#follow" class="bg-sky-600 text-white px-5 py-2 rounded-full hover:bg-sky-700 transition-colors font-semibold">Follow</a>
+            </div>
+            <!-- This is the hamburger menu button. 'md:hidden' makes it visible only on screens smaller than medium. -->
+            <button id="mobile-menu-button" class="md:hidden text-slate-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- This is the mobile menu itself. It's hidden by default and only shown when the button is clicked. -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-slate-200">
+            <a href="#about" class="block py-2 hover:text-sky-500">About</a>
+            <a href="#news" class="block py-2 hover:text-sky-500">News</a>
+            <a href="#events" class="block py-2 hover:text-sky-500">Events</a>
+            <a href="#music" class="block py-2 hover:text-sky-500">Music</a>
+            <a href="#videos" class="block py-2 hover:text-sky-500">Videos</a>
+            <a href="#gallery" class="block py-2 hover:text-sky-500">Gallery</a>
+            <a href="#contact" class="block py-2 hover:text-sky-500">Contact</a>
+            <a href="#follow" class="block mt-2 bg-sky-600 text-white text-center px-4 py-2 rounded-full hover:bg-sky-700">Follow</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <!-- Adjusted height for mobile (h-[60vh]) and kept it full screen for small devices and up (sm:h-screen) -->
+        <section class="hero-bg h-[60vh] sm:h-screen -mt-20"></section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-white">
+             <div class="container mx-auto px-6">
+                <!-- 'flex-col md:flex-row' makes the layout a column on mobile and a row on medium screens and up. -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3">
+                        <img src="album-art/ab2.jpg" alt="Yielziey" class="rounded-lg shadow-xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/e2e8f0/475569?text=Image';">
+                    </div>
+                    <div class="md:w-2/3 md:pl-12">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">About the Artist</h2>
+                        <p class="text-lg text-slate-700 mb-6">
+                            <strong>Full Name:</strong> Maria Chandria Mariel Ollage Leu<br>
+                            <strong>Stage Name:</strong> Yielziey<br>
+                            <strong>Birthday:</strong> April 19, 2003 (Age 22)<br>
+                            <strong>Birthplace:</strong> La Union, Philippines
+                        </p>
+                        <p class="text-lg text-slate-700 mb-4">
+                            Chandria Mariel, professionally known as Yielziey, is a rising Filipino-Swiss singer,
+                            songwriter, gamer, and programmer. Hailing from Caloocan City, she is known for her
+                            heartfelt lyrics and soulful melodies that blend emotional storytelling with modern pop sounds.
+                        </p>
+                        <p class="text-lg text-slate-700">
+                            Her music, available on all major streaming platforms, explores themes of love, hope, 
+                            and self-discovery, resonating deeply with her listeners.
+                        </p>
+                    </div>
+                </div>
+        </section>
+        
+        <!-- News Section -->
+        <section id="news" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">News & Updates</h2>
+                <!-- This grid starts as 1 column, then becomes 2 on medium screens, and 3 on large screens. -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/a5f3fc/1e293b?text=Live+Performance" alt="News Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-slate-500 mb-2">October 25, 2025</p>
+                            <h3 class="text-xl font-bold mb-3">Upcoming Live Acoustic Set</h3>
+                            <p class="text-slate-700 mb-4">Join Yielziey for a special live acoustic performance online next month. More details to be announced soon!</p>
+                            <a href="#" class="font-semibold text-sky-600 hover:underline">Read More</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/bae6fd/1e293b?text=New+Single" alt="News Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-slate-500 mb-2">October 10, 2025</p>
+                            <h3 class="text-xl font-bold mb-3">"Ikaw" is Out Now!</h3>
+                            <p class="text-slate-700 mb-4">The new single "Ikaw" is now available on all major streaming platforms. Listen today!</p>
+                            <a href="#music" class="font-semibold text-sky-600 hover:underline">Listen Here</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/7dd3fc/1e293b?text=In+The+Studio" alt="News Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-slate-500 mb-2">September 5, 2025</p>
+                            <h3 class="text-xl font-bold mb-3">Back in the Studio</h3>
+                            <p class="text-slate-700 mb-4">Yielziey is back in the studio working on new music. Expect more soulful melodies and stories soon.</p>
+                            <a href="#" class="font-semibold text-sky-600 hover:underline">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">Upcoming Events</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-8">
+                        <div class="bg-slate-50 rounded-lg p-6 flex flex-col sm:flex-row items-center gap-6 shadow-sm">
+                            <div class="text-center sm:text-left">
+                                <p class="text-2xl font-bold text-sky-600">OCT</p>
+                                <p class="text-4xl font-extrabold text-slate-800">25</p>
+                            </div>
+                            <div class="flex-grow text-center sm:text-left">
+                                <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Online Acoustic Night</h3>
+                                <p class="text-slate-600">Twitch & YouTube Live Stream</p>
+                            </div>
+                            <a href="#" class="bg-sky-600 text-white px-5 py-2 rounded-full hover:bg-sky-700 transition-colors font-semibold w-full sm:w-auto text-center">More Info</a>
+                        </div>
+                        <div class="bg-slate-50 rounded-lg p-6 flex flex-col sm:flex-row items-center gap-6 shadow-sm">
+                            <div class="text-center sm:text-left">
+                                <p class="text-2xl font-bold text-sky-600">NOV</p>
+                                <p class="text-4xl font-extrabold text-slate-800">12</p>
+                            </div>
+                            <div class="flex-grow text-center sm:text-left">
+                                <h3 class="text-xl sm:text-2xl font-bold text-slate-900">NU Fair 2025: Guest Performance</h3>
+                                <p class="text-slate-600">National University Manila Campus</p>
+                            </div>
+                            <a href="#" class="bg-slate-300 text-slate-600 px-5 py-2 rounded-full font-semibold cursor-not-allowed w-full sm:w-auto text-center">Tickets Sold Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">Discography</h2>
+                <h3 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-8 text-center">EP: Unwritten Scars</h3>
+                <div class="max-w-3xl mx-auto mb-16 rounded-lg shadow-xl overflow-hidden">
+                    <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/album/0lxE2HQxYadvbpbS2wkqan?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-8 text-center">Singles</h3>
+                <!-- This grid is highly responsive: 1 col on mobile, 2 on small, 3 on medium, 4 on large screens. -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="music-plaque"><img src="album-art/almost-real.jpg" alt="Almost Real" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">Almost Real</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/1WvIqua8Efo6sRvk18goNA?si=59d550c8386e44d5" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a><a href="https://music.youtube.com/watch?v=68g1nnYUAyM&si=3bWju3mAlF7_1zBg" class="text-sm font-semibold text-sky-600 hover:underline">YouTube</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/just-there.jpg" alt="Just There" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">Just There</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/3PWl06ytcs2c9WX8BkQc9X?si=500e0607fc6942c8" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/gunita.jpg" alt="Gunita" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">Gunita</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/0uxG14ZxfRyGezxHcRKxwz?si=92d80e81d95a47d6" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/endless-promise.jpg" alt="Endless Promise" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">Endless Promise</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/251wVZjVPyrYP49Z8COhOn?si=640fd1599c934246" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/paglaum-sa-pag-ibig.jpg" alt="Paglaum sa Pag-ibig" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">Paglaum sa Pag-ibig</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/4vQ6trFITD1noXCt1T1k4z?si=818d32f002c34770" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/paano-pano.jpg" alt="Paano Pano?" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">Paano Pano?</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/6bX9aD4hwtJdQr68lgp7jl?si=b6f0959527cc459a" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/palayain.jpg" alt="Palayain" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">Palayain</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/2m6KNqFuSZk3JozcVLVbcg?si=c940ce2c464045bf" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/you-and-i.jpg" alt="You and I (adi)" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">You and I (adi)</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/7w33MzRPQOV53zjHb58sWP?si=b0226cff52cd4a79" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/hanapin.jpg" alt="Hanapin" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">Hanapin</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/17xL6BX2WJNpl9XBwsyD0k?si=f3484e7d00984b2e" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a></div></div></div>
+                    <div class="music-plaque"><img src="album-art/crazy.jpg" alt="Crazy" class="w-full h-auto"><div class="p-5"><h4 class="text-xl font-bold text-slate-900">Crazy</h4><div class="mt-3 flex gap-3"><a href="https://open.spotify.com/track/3a4Cp3ax0mReEODbZF2zc5?si=dc4dad2379d14d5e" class="text-sm font-semibold text-sky-600 hover:underline">Spotify</a></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Videos Section -->
+        <section id="videos" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">Music Videos</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Video 1 -->
+                    <div class="shadow-xl rounded-lg overflow-hidden">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/MIXI1c4mTB4?si=7Flu556Gw_P4L8Aq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4 bg-slate-50">
+                            <h3 class="text-xl font-bold text-slate-800">just there (Lyric Video)</h3>
+                        </div>
+                    </div>
+                    <!-- Video 2 -->
+                    <div class="shadow-xl rounded-lg overflow-hidden">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/WMjPSTJX6H4?si=WaDQ-xNHxV8qWvn7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4 bg-slate-50">
+                            <h3 class="text-xl font-bold text-slate-800">Gunita (Lyric Video)</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Photo Gallery Section -->
+        <section id="gallery" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-12 text-center">Photo Gallery</h2>
+                <!-- Starts with 2 columns on mobile, then 3, then 4 on larger screens. -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="gallery-item"><img src="album-art/gallery-1.jpg" alt="Gallery Image 1" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/ab.jpg" alt="Gallery Image 5" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/gallery-2.jpg" alt="Gallery Image 2" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/ab3.jpg" alt="Gallery Image 7" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/artist-photo.jpg" alt="Gallery Image 3" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/gallery-4.jpg" alt="Gallery Image 3" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/gallery-3.jpg" alt="Gallery Image 4" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                    <div class="gallery-item"><img src="album-art/ab4.jpg" alt="Gallery Image 8" class="rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">Get in Touch</h2>
+                <p class="text-lg max-w-2xl mx-auto mb-10 text-slate-700">
+                    For inquiries, collaborations, or booking, please feel free to reach out. I'm always excited to work on new projects and connect with fellow artists and creators.
+                </p>
+                <a href="mailto:yielzieymusic@gmail.com" class="inline-block bg-sky-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-sky-700 transition-transform hover:scale-105">
+                    Email for Inquiry
+                </a>
+            </div>
+        </section>
+
+        <!-- Follow Section -->
+        <section id="follow" class="py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">Follow Yielziey</h2>
+                <p class="text-lg max-w-2xl mx-auto mb-10 text-slate-700">
+                    Stay updated with the latest releases, behind-the-scenes content, and live streams.
+                </p>
+                <div class="flex justify-center items-center flex-wrap gap-8 sm:gap-10">
+                    <a href="https://open.spotify.com/artist/6rhenHsRHjPnQIcawW67VQ" target="_blank" 
+                         class="social-icon transition-colors duration-300 text-slate-500 hover:text-green-500" 
+                         title="Spotify">
+                        <i class="bi bi-spotify text-4xl sm:text-5xl"></i>
+                    </a>
+                    <a href="https://music.apple.com/ph/artist/yielziey/1721563975" target="_blank" 
+                        class="social-icon transition-colors duration-300 text-slate-500 hover:text-pink-500" 
+                        title="Apple Music">
+                        <i class="bi bi-apple text-4xl sm:text-5xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@yielziey" target="_blank" 
+                        class="social-icon transition-colors duration-300 text-slate-500 hover:text-red-600" 
+                        title="YouTube">
+                        <i class="bi bi-youtube text-4xl sm:text-5xl"></i>
+                    </a>
+                    <a href="https://www.twitch.tv/yielziey" target="_blank" 
+                        class="social-icon transition-colors duration-300 text-slate-500 hover:text-purple-500" 
+                        title="Twitch">
+                        <i class="bi bi-twitch text-4xl sm:text-5xl"></i>
+                    </a>
+                </div>  
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-200 border-t border-slate-300 py-6">
+        <div class="container mx-auto px-6 text-center text-slate-600">
+            <p>&copy; 2025 Yielziey. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <img id="modal-img" src="" alt="Full-size gallery image" class="max-w-full max-h-full rounded-lg">
+        <button id="modal-close" class="absolute top-4 right-6 text-white text-5xl font-bold">&times;</button>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Gallery Modal Script
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('gallery-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalClose = document.getElementById('modal-close');
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                modalImg.src = imgSrc;
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            });
+        });
+        const closeModal = () => {
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        };
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
